@@ -5,19 +5,24 @@ import javafx.stage.Stage;
 
 
 public class Mines extends Application {
-	private Mines_View view;
-	private Mines_Model model;
-	private Mines_Controller controller;
+	
+	// Start
+	private Mines_View view; // Die View
+	private Mines_Model model; // Das Model
+	private Mines_Controller controller; // Der Controller
+	// Klassen instanziert und exisitieren somit, aber noch nicht initialisiert
+	
+	// Start
+	public void start(Stage primaryStage) throws Exception {
+		this.model = new Mines_Model(); // Hat keine Abhänigkeiten und kann deshalb zuerst erstellt werden
+		this.view = new Mines_View(primaryStage, model); // Die View erhält eine Referenz aufs Model und das "Stage" Objekt
+		this.controller = new Mines_Controller(model, view); // Der Controller erhält Referenzen aufs Model und View
+		view.start(); // Um GUI anzuzeigen
+	}
 
+	// Start
 	public static void main(String[] args) {
 		launch();
 	}
 
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		model = new Mines_Model();
-		view = new Mines_View(primaryStage, model);
-		controller = new Mines_Controller(model, view);
-		view.start();
-	}
 }
