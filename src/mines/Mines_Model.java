@@ -66,7 +66,7 @@ public class Mines_Model {
 		for (int r = minRow; r <= maxRow; r++) {
 			// In dieser Reihe von der ersten Spalte bis zur letzten Spalte
 			for (int c = minCol; c <= maxCol;c++) {
-				// Wenn es der Fall ist , dass diese Zelle eine Bombe ist
+				// Zählen
 				if (gameBoard[r][c].isMine) count++;
 				
 			}
