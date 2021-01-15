@@ -10,7 +10,7 @@ public class Mines extends Application {
 	private Mines_View view; // Die View
 	private Mines_Model model; // Das Model
 	private Mines_Controller controller; // Der Controller
-	// Klassen instanziert und exisitieren somit, aber noch nicht initialisiert
+	
 	
 	// Start
 	public void start(Stage primaryStage) throws Exception {
